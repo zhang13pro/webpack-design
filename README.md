@@ -128,3 +128,22 @@
 ```
 
 ## Loader
+
+Webpack 默认只加载 JS 语法，其他资源需要另外的`loader`。
+
+可以看到注释也会被打包到最终的`js`文件，所以去除多余的注释也是性能优化的一个点。
+
+```js
+/******/ (() => {
+  // webpackBootstrap
+  var __webpack_exports__ = {};
+  /* You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. */
+  /* div {
+  font-size: 12px;
+} */
+
+  /* 测试JS语法 */
+  console.log("JS in CSS");
+  /******/
+})();
+```
