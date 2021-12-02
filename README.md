@@ -129,7 +129,7 @@
 
 ## Loader
 
-Webpack 默认只加载 JS 语法，其他资源需要另外的`loader`。
+Webpack 默认只加载 JS 语法，其他资源如`css`就需要`css-loader`处理 css 语法。
 
 可以看到注释也会被打包到最终的`js`文件，所以去除多余的注释也是性能优化的一个点。
 
@@ -146,4 +146,34 @@ Webpack 默认只加载 JS 语法，其他资源需要另外的`loader`。
   console.log("JS in CSS");
   /******/
 })();
+```
+
+### css-loader
+
+```js
+var ___CSS_LOADER_EXPORT___ =
+  _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(
+    _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()
+  );
+// Module
+___CSS_LOADER_EXPORT___.push([
+  module.id,
+  "div {\r\n  color: red;\r\n}\r\n",
+  "",
+]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ =
+  ___CSS_LOADER_EXPORT___;
+```
+
+### style-loader
+
+```js
+/* istanbul ignore next  */
+function insertStyleElement(options) {
+  var element = document.createElement("style");
+  options.setAttributes(element, options.attributes);
+  options.insert(element, options.options);
+  return element;
+}
 ```
