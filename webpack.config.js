@@ -1,5 +1,7 @@
 const path = require("path"); // node 模块
 
+const RemoveCommentsPlugin = require("./remove-comments-plugin");
+
 /**
  * JSDoc 配置提示
  * @type {import('webpack').Configuration}
@@ -19,4 +21,5 @@ module.exports = {
       },
     ],
   },
+  plugins: [new RemoveCommentsPlugin({})],
 };
